@@ -30,4 +30,9 @@ public class Assurance {
     private int compteur;
 
 
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @JoinColumn(name = "type_assurance_id",nullable = false)
+    private Type type;
+
+
 }

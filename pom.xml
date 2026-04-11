@@ -8,7 +8,7 @@
     <artifactId>master-2026</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>master-2026</name>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
