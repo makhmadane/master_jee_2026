@@ -3,13 +3,12 @@ package sn.isi.master2026.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.Columns;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "assurance")
+@Table(name = "type")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
