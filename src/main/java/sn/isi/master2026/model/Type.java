@@ -5,9 +5,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.Columns;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Table(name = "assurance")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,6 +22,8 @@ public class Type {
 
     @Column(nullable = false,length = 50,unique = true)
     private String label;
+
+    private LocalDate dateCreation;
 
     @ToString.Exclude
     @OneToMany(mappedBy = "type", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

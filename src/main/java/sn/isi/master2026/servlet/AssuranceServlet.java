@@ -15,6 +15,8 @@ import java.lang.reflect.Parameter;
 import java.time.LocalDate;
 import java.util.List;
 
+import static sn.isi.master2026.model.Assurance.*;
+
 @WebServlet("/assurance")
 public class AssuranceServlet  extends HttpServlet {
 
@@ -30,8 +32,7 @@ public class AssuranceServlet  extends HttpServlet {
         RequestDispatcher dispatcher;
         switch (action){
             case  "list" :
-                List<Assurance> assurances =  this.assuranceRepository.getAll();
-                // appele la page view
+                List<Assurance> assurances =  this.assuranceRepository.getAll();                // appele la page view
                 req.setAttribute("tabAssurances",assurances); // add du tableau dans la req
                 dispatcher = req.getRequestDispatcher("assurance/list.jsp"); // redirection
                 dispatcher.forward(req,resp);  //transfert req et du resp a list.jsp
@@ -65,8 +66,9 @@ public class AssuranceServlet  extends HttpServlet {
         RequestDispatcher dispatcher;
         switch (action){
             case "save" :
-                Assurance assurance =  Assurance.
-                        builder().
+
+
+                Assurance assurance = builder().
                         cni(req.getParameter("cni")).
                         numero( req.getParameter("numero")).
                         nomClient( req.getParameter("nom")).
@@ -76,8 +78,7 @@ public class AssuranceServlet  extends HttpServlet {
                 resp.sendRedirect("?action=list");
                 break;
             case "update" :
-                Assurance assuranceUpd =  Assurance.
-                        builder().
+                Assurance assuranceUpd = builder().
                         id(Integer.parseInt(req.getParameter("id"))).
                         cni(req.getParameter("cni")).
                         numero( req.getParameter("numero")).
