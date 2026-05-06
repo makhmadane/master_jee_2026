@@ -8,6 +8,7 @@
         <!-- JDBC Connection Configuration -->
         <class>sn.isi.master2026.model.Assurance</class>
         <class>sn.isi.master2026.model.Type</class>
+        <class>sn.isi.master2026.model.Utilisateur</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/master1_2026" />
